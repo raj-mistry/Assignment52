@@ -44,11 +44,11 @@ public class DummyContent {
 
 
         // Add some sample items.
-        //for (int i = 1; i <= COUNT; i++) {
+        //for (int i = 0; i <= COUNT; i++) {
         //    addItem(createDummyItem(i));
         //}
 
-        addItem(new DummyItem(String.valueOf(0), mNames.get(0), mDescription.get(0)));
+        addItem(new DummyItem(String.valueOf(0), mNames.get(0), mDescription.get(0), mDescription.get(0)));
     }
 
     private static void addItem(DummyItem item) {
@@ -57,7 +57,7 @@ public class DummyContent {
     }
 
     private static DummyItem createDummyItem(int position) {
-        return new DummyItem(String.valueOf(position), mNames.get(position), mDescription.get(position));
+        return new DummyItem(String.valueOf(position), mNames.get(position), mDescription.get(position), mDetailedDescription.get(position));
     }
     /*
 
@@ -82,11 +82,13 @@ public class DummyContent {
         public final String id;
         public final String content;
         public final String details;
+        public final String description;
 
-        public DummyItem(String id, String content, String details) {
+        public DummyItem(String id, String content, String details, String description) {
             this.id = id;
             this.content = content;
             this.details = details;
+            this.description = description;
         }
 
         @Override
