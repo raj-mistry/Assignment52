@@ -59,20 +59,22 @@ public class ItemDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.item_detail, container, false);
-        View photoView = inflater.inflate(R.layout.photo_detail,container, false);
+        //View rootView = inflater.inflate(R.layout.item_detail, container, false);
+        //View photoView = inflater.inflate(R.layout.photo_detail,container, false);
+        View itemView = inflater.inflate(R.layout.myinfo,container, false);
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-           // Glide.with(this)
-           //         .asBitmap()
-           //         .load(mItem.imageUrl)
-           //         .into(((ImageView)photoView.findViewById(R.id.photo_detail)));
-            ((TextView) photoView.findViewById(R.id.photo_detail)).setText(mItem.description);
-            ((TextView) rootView.findViewById(R.id.item_detail)).setText(mItem.description);
+            //ImageView image = itemView.findViewById(R.id.image_detail);
+            //Glide.with(this)
+            //        .asBitmap()
+            //        .load(mItem.imageUrl)
+            //        .into(image);
+            //((TextView) photoView.findViewById(R.id.photo_detail)).setText(mItem.description);
+            ((TextView) itemView.findViewById(R.id.item_detail)).setText(mItem.description);
         }
 
-        return rootView;
+        return itemView;
     }
 }
 
