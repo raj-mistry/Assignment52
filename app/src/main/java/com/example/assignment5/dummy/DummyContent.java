@@ -48,7 +48,7 @@ public class DummyContent {
         //    addItem(createDummyItem(i));
         //}
 
-        addItem(new DummyItem(String.valueOf(0), mNames.get(0), mDescription.get(0), mDescription.get(0)));
+        addItem(new DummyItem(String.valueOf(0), mNames.get(0), mDescription.get(0), mDetailedDescription.get(0)));
     }
 
     private static void addItem(DummyItem item) {
