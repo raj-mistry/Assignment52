@@ -7,8 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.assignment5.dummy.DummyContent;
 
 /**
@@ -58,12 +60,29 @@ public class ItemDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.item_detail, container, false);
+        View photoView = inflater.inflate(R.layout.photo_detail,container, false);
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
+           // Glide.with(this)
+           //         .asBitmap()
+           //         .load(mItem.imageUrl)
+           //         .into(((ImageView)photoView.findViewById(R.id.photo_detail)));
+            ((TextView) photoView.findViewById(R.id.photo_detail)).setText(mItem.description);
             ((TextView) rootView.findViewById(R.id.item_detail)).setText(mItem.description);
         }
 
         return rootView;
     }
 }
+
+/*
+        ImageView image = findViewById(R.id.image);
+        Glide.with(this)
+                .asBitmap()
+                .load(imageUrl)
+                .into(image);
+
+
+
+ */
