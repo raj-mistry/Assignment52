@@ -25,17 +25,21 @@ public class DummyContent {
 
     private static final int COUNT = 25;
 
+
     static {
         // Add some sample items.
-        for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(i));
-        }
+        //for (int i = 1; i <= COUNT; i++) {
+        //    addItem(createDummyItem(i));
+        //}
+        addItem(new DummyItem("ID","Content", "Detail"));
     }
 
     private static void addItem(DummyItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }
+
+    /*
 
     private static DummyItem createDummyItem(int position) {
         return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
@@ -49,6 +53,7 @@ public class DummyContent {
         }
         return builder.toString();
     }
+     */
 
     /**
      * A dummy item representing a piece of content.
